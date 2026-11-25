@@ -442,42 +442,34 @@
         height: 40px;
       }
 
-      .logo {
-        font-size: 1.2rem;
-      }
+.logo {
+  font-size: 1.2rem;
+  margin-left: 0;
+  padding-left: 60px;
+}
     }
 
     /* inserted top-left image styling */
-    .top-left-image {
-      position: fixed;
-      top: 18px;
-      left: 18px;
-      width: 85px;
-      height: 85px;
-      border-radius: 22px;
-      object-fit: cover;
-      z-index: 9999;
-      background: white;
-      padding: 4px;
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
-      border: 2px solid rgba(255, 255, 255, 0.85);
-      transition: transform 0.25s ease, box-shadow 0.25s ease;
-    }
+   .top-left-image {
+  position: absolute;
+  top: 105px;
+  left: 18px;
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  object-fit: cover;
+  z-index: 10;
+  background: white;
+  padding: 2px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.12);
+  border: 2px solid rgba(255, 255, 255, 0.85);
+}
 
     .top-left-image:hover {
       transform: translateY(-3px) scale(1.03);
       box-shadow: 0 18px 40px rgba(79, 70, 229, 0.22);
     }
 
-  @media (max-width: 768px) {
-    .top-left-image {
-        width: 40px;
-        height: 40px;
-        top: 10px;
-        left: 10px;
-        border-radius: 50%;
-    }
-}
   </style>
 </head>
 <body>

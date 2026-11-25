@@ -32,7 +32,7 @@ Laikipia University
 ## 📫 Contact
 
 - **Email:** njauishmael1@gmail.com
-- **GitHub:** github.com/jeyjey-001/ishmael-njau
+- **GitHub:** https://github.com/jeyjey-001
 
 ---
 

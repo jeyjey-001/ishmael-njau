@@ -75,21 +75,45 @@
     }
 
     .nav-links a {
-      text-decoration: none;
-      font-weight: 600;
-      color: #2d2b3c;
-      transition: 0.2s ease;
-      font-size: 1rem;
-    }
+  text-decoration: none;
+  font-weight: 600;
+  color: #2d2b3c;
+  transition: 0.2s ease;
+  font-size: 1rem;
+  position: relative;
+}
 
-    .nav-links a:hover {
-      color: #8b5cf6;
-    }
+.nav-links a:hover {
+  color: #ff1111;
+}
+
+.nav-links a::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  width: 0;
+  height: 2px;
+  background: #f65c8a;
+  transition: width 0.3s ease;
+}
+
+.nav-links a:hover::after {
+  width: 100%;
+}
+
+.nav-links a.active {
+  color: #8b5cf6;
+}
+
+.nav-links a.active::after {
+  width: 100%;
+}
 
     /* buttons */
     .btn {
       display: inline-block;
-      background: #1e1b2e;
+      background: #06f742e8;
       color: white;
       padding: 0.7rem 1.6rem;
       border-radius: 2rem;
@@ -338,15 +362,41 @@
       color: #5b21b6;
     }
 
-    .project-link {
-      text-decoration: none;
-      font-weight: 600;
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      color: #4f46e5;
-      margin-top: 1rem;
-    }
+ .project-link {
+  text-decoration: none;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: #4f46e5;
+  margin-top: 1rem;
+  padding: 10px 16px;
+  border: 1px solid #4f46e5;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+.project-link:hover {
+  background: #4f46e5;
+  color: white;
+  transform: translateY(-5px);
+  box-shadow: 0 6px 15px rgba(79, 70, 229, 0.25);
+}
+
+.project-link::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: 2px;
+  left: 0;
+  background: currentColor;
+  transition: width 0.3s ease;
+}
+
+.project-link:hover::after {
+  width: 100%;
+}
 
     /* skills marquee / modern list */
     .skills-section {
@@ -524,6 +574,16 @@
       transform: translateY(-3px) scale(1.03);
       box-shadow: 0 18px 40px rgba(79, 70, 229, 0.22);
     }
+.project-buttons {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-top: 15px;
+}
+
+.project-buttons .project-link {
+  margin-top: 0;
+}
 
   </style>
 </head>
@@ -551,8 +611,11 @@
       <div class="hero-content">
         <span class="hero-badge"><i class="fas fa-code"></i>  Web Developer & ICT Student</span>
         <h1>Building Modern <span class="highlight">Web Experiences</span> That Stand Out</h1>
-    <p>I’m Ishmael Njau — a creative web developer and ICT student focused on creating modern, responsive, and user-friendly websites.</p>
-        <div class="hero-buttons">
+<span style="color: #b65311;">Hi...Welcome! <br></span>
+I’m Ishmael Njau — I Build Responsive Websites & Practical Digital Solutions.
+I'm an ICT student and aspiring web developer passionate about creating clean, responsive and user-friendly web experiences.
+<br>
+<span style="color: #e01b1b;">I'm glad to have you!</span>
           <a href="#" data-page="work" class="btn btn-primary"><i class="fas fa-folder-open"></i> View Projects</a>
           <a href="Ishmael-Njau-CV.pdf" download class="btn btn-cv"><i class="fas fa-download"></i> Download My CV</a>
           <a href="#" data-page="contact" class="btn btn-outline"><i class="fas fa-envelope"></i> Contact Me</a>
@@ -663,21 +726,24 @@
       description: "A modern responsive portfolio website built to showcase my web development skills, projects, and contact information.",
       tags: ["HTML", "CSS", "JavaScript"],
       icon: "fas fa-user",
-      link: "index.html"
+      link: "index.html",
+      github: "https://github.com/jeyjey-001/ishmael-njau"
     },
     {
       title: "Student Registration Form System",
       description: "A responsive student registration form designed to collect and manage student records with browser storage.",
       tags: ["HTML", "CSS", "JavaScript"],
       icon: "fas fa-file-alt",
-      link: "student-registration-form.html"
+      link: "student-registration-form.html",
+      github: "https://github.com/jeyjey-001/ishmael-njau"
     },
     {
       title: "Simple Calculator App",
       description: "A browser-based calculator built with JavaScript to perform basic arithmetic operations through an interactive interface.",
       tags: ["HTML", "CSS", "JavaScript"],
       icon: "fas fa-calculator",
-      link: "calculator-app.html"
+      link: "calculator-app.html",
+      github: "https://github.com/jeyjey-001/ishmael-njau"
     }
   ];
 
@@ -702,7 +768,7 @@
     projectsData.forEach(proj => {
       const card = document.createElement('div');
       card.className = 'project-card';
-      card.innerHTML = `
+   card.innerHTML = `
   <div class="project-img">
     <i class="${proj.icon}" style="font-size: 3rem; color: #6d28d9;"></i>
   </div>
@@ -712,7 +778,14 @@
     <div class="project-tags">
       ${proj.tags.map(tag => `<span class="tag">${tag}</span>`).join('')}
     </div>
-    <a href="${proj.link}" class="project-link">Case study <i class="fas fa-arrow-right"></i></a>
+    <div class="project-buttons">
+      <a href="${proj.link}" class="project-link" target="_blank">
+        <i class="fas fa-eye"></i> Live Demo
+      </a>
+      <a href="${proj.github}" class="project-link" target="_blank">
+        <i class="fab fa-github"></i> View Code
+      </a>
+    </div>
   </div>
 `;
       container.appendChild(card);

@@ -73,18 +73,19 @@
       gap: 2.2rem;
       list-style: none;
     }
-
-    .nav-links a {
+.nav-links a {
   text-decoration: none;
   font-weight: 600;
   color: #2d2b3c;
-  transition: 0.2s ease;
+  transition: 0.3s ease;
   font-size: 1rem;
   position: relative;
+  display: inline-block;
 }
 
 .nav-links a:hover {
   color: #ff1111;
+  transform: translateY(-3px);
 }
 
 .nav-links a::after {
@@ -250,40 +251,44 @@
       line-height: 1.5;
     }
 
-    .hero-stats {
-      display: flex;
-      gap: 2rem;
-      margin-top: 2rem;
-    }
+  .hero-stats {
+  display: flex;
+  gap: 2rem;
+  margin-top: 2rem;
+  margin-left: 750px;
+}
 
     .stat h3 {
       font-size: 1.8rem;
       font-weight: 800;
     }
 
-    .hero-image {
-      flex: 0.9;
-      display: flex;
-      justify-content: center;
-    }
+.avatar-frame {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+}
 
-    .avatar-frame {
-      width: 300px;
-      height: 300px;
-      background: linear-gradient(145deg, #a78bfa, #c4b5fd);
-      border-radius: 40% 60% 70% 30% / 40% 45% 55% 60%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      box-shadow: 0 25px 40px -12px rgba(0, 0, 0, 0.2);
-    }
+.avatar-frame i {
+  font-size: 2.5rem;
+}
 
-    .avatar-frame i {
-      font-size: 9rem;
-      color: white;
-      filter: drop-shadow(2px 4px 8px rgba(0,0,0,0.2));
-    }
+.avatar-frame {
+  width: 90px;
+  height: 90px;
+  background: linear-gradient(145deg, #a78bfa, #c4b5fd);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+}
 
+.avatar-frame i {
+  font-size: 2.5rem;
+  color: white;
+  filter: drop-shadow(2px 4px 8px rgba(0,0,0,0.2));
+}
     /* section titles */
     .section-title {
       font-size: 2.2rem;
@@ -556,14 +561,14 @@
 
     /* inserted top-left image styling */
  .top-left-image {
-  position: absolute;
-  top: 700px;
-  left: 500px;
-  width: 110px;
-  height: 110px;
+  position: fixed;
+  top: 90px;
+  left: 25px;
+  width: clamp(75px, 10vw, 110px);
+  height: clamp(75px, 10vw, 110px);
   border-radius: 50%;
   object-fit: cover;
-  z-index: 10;
+  z-index: 99;
   background: white;
   padding: 2px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.12);
@@ -616,20 +621,16 @@ I’m Ishmael Njau — I Build Responsive Websites & Practical Digital Solutions
 I'm an ICT student and aspiring web developer passionate about creating clean, responsive and user-friendly web experiences.
 <br>
 <span style="color: #e01b1b;">I'm glad to have you!</span>
+<div style="display: flex; gap: 1rem; flex-wrap: nowrap; margin-top: 30px; align-items: center;"></div>
           <a href="#" data-page="work" class="btn btn-primary"><i class="fas fa-folder-open"></i> View Projects</a>
           <a href="Ishmael-Njau-CV.pdf" download class="btn btn-cv"><i class="fas fa-download"></i> Download My CV</a>
-          <a href="#" data-page="contact" class="btn btn-outline"><i class="fas fa-envelope"></i> Contact Me</a>
+          <a href="#" data-page="contact" class="btn btn-outline"><i class="fas fa-envelope"></i> Contact Me</div></a>
         </div>
         <div class="hero-stats">
   <div class="stat"><h3>3+</h3><span>Web Projects</span></div>
   <div class="stat"><h3>8+</h3><span>Tech Skills</span></div>
   <div class="stat"><h3>100%</h3><span>Passion to Learn</span></div>
 </div>
-      </div>
-      <div class="hero-image">
-        <div class="avatar-frame">
-          <i class="fas fa-laptop-code"></i>
-        </div>
       </div>
     </div>
   </section>
